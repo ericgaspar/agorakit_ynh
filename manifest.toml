@@ -12,7 +12,7 @@ version = "1.9.3~ynh1"
 maintainers = ["eric_G"]
 
 [upstream]
-license = "AGPL-3.0"
+license = "AGPL-3.0-only"
 website = "https://example.com"
 demo = "https://demo.example.com"
 admindoc = "https://docs.agorakit.org/index.html"
