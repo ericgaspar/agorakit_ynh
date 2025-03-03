@@ -13,10 +13,9 @@ maintainers = ["eric_G"]
 
 [upstream]
 license = "AGPL-3.0-only"
-website = "https://example.com"
-demo = "https://demo.example.com"
+website = "http://agorakit.org/"
+demo = "https://app.agorakit.org/"
 admindoc = "https://docs.agorakit.org/index.html"
-userdoc = "https://yunohost.org/apps"
 code = "https://github.com/agorakit/agorakit"
 
 [integration]
@@ -51,7 +50,7 @@ ram.runtime = "50M"
     [resources.sources.main]
     url = "https://github.com/agorakit/agorakit/archive/refs/tags/1.9.3.tar.gz"
     sha256 = "5298a609546a562d533cf9ec6647be9522f8efee281b0f3174e3e1b927a42780"
-    # autoupdate.strategy = "latest_github_tag"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
     allow_email = true
@@ -59,15 +58,11 @@ ram.runtime = "50M"
     [resources.install_dir]
     group = "www-data:r-x"
 
-    [resources.data_dir]
-
     [resources.permissions]
     main.url = "/"
 
-    [resources.ports]
-
     [resources.apt]
-    packages = "mariadb-server, php8.4-fpm, php8.4-mysql, php8.4-curl, php8.4-imap"
+    packages = "mariadb-server, php8.4-mysql, php8.4-curl, php8.4-imap"
 
     [resources.database]
     type = "mysql"
