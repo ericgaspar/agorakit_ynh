@@ -47,6 +47,8 @@ ynh_config_add_logrotate
 # Create a dedicated Fail2Ban config
 ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failregex="Regex to match into the log for a failed login"
 
+ynh_config_add --template="cron" --destination="/etc/cron.d/$app"
+
 #=================================================
 # INSTALL AGORAKIT WITH COMPOSER
 #=================================================
@@ -63,7 +65,7 @@ ynh_script_progression "Install $app"
 pushd $install_dir
 	php$php_version artisan key:generate --no-interaction --force
 	php$php_version artisan migrate --no-interaction --force
-	php$php_version artisan bookstack:create-admin --email="$email" --name="$admin" --external-auth-id="$admin"
+	php$php_version artisan storage:link
 popd
 
 #=================================================
